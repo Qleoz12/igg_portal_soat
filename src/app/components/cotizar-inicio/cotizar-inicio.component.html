@@ -1,0 +1,50 @@
+
+<div class="bg-image">
+    <div class="firsform">
+        <p class="firstTitle">Adquiere tu SOAT en 3 pasos</p>
+        <div class="firstBlock">
+            <div class="firstInputsDiv">
+                <div class="firstDivBorder">
+                    <input
+                        type="email" name="email"
+                        class="firstInputNoBorder ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required"
+                        placeholder="Correo electrónico" ng-model="email" autocomplete="off" required="" aria-invalid="true"
+                        style="">
+                        <div class="firstImageInput">
+                            <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                </div>
+                <div class="firstDivBorder">
+                    <input type="text"
+                        name="phone"
+                        class="firstInputNoBorder ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength"
+                        placeholder="Celular" ng-model="phone" ng-keypress="onlyNumber($event)" minlength="10" maxlength="16"
+                        autocomplete="off" required="" aria-invalid="true" style="">
+
+                        <div class="firstImageInput">
+                            <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                </div>
+                <div class="firstDivBorder">
+                    <input
+                        type="text" name="plate"
+                        class="firstInputNoBorder ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength"
+                        placeholder="Placas del vehículo" ng-model="plate" minlength="5" maxlength="6" autocomplete="off"
+                        required="" aria-invalid="true" style="">
+                    
+                    <div class="firstImageInput">
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div><button class="firstButton" ng-style="{'background-color': secondaryColor,'color': mainBoxColor}"
+                    style="background-color: rgb(0, 35, 96); color: rgb(255, 255, 255);">COTIZAR</button></div>
+        </div>
+    </div>
+</div>

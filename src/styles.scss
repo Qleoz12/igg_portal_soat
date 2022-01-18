@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.firsform{
+    z-index: 3;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.firstTitle {
+    font-size: 3.5vw;
+    margin: 0 6%;
+}
+
+.firstBlock {
+    display: flex;
+    height: 96px;
+    width: 88%;
+    margin: 2% 6%;
+    border-radius: 4px;
+    background-color: #FF9C1F;
+}
+
+.firstInputsDiv {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 160px);
+    margin: 20px 15px 20px 20px;
+}
+
+.firstDivBorder {
+    position: relative;
+    height: 56  px;
+    background-color: #fff;
+    border: 2px solid #e7e7e7;
+    border-radius: 3px;
+    width: 32%;
+}
+
+.firstInputNoBorder {
+    border: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 9px;
+    left: 47px;
+    outline: 0;
+    width: calc(100% - 70px)
+}
+
+.firstImageInput {
+    top: -2px;
+    left: 0px;
+    width: 60px;
+    position: absolute
+}
+
+.firstBlock .autorizathionDiv {
+    display: none;
+}
+
+.firstButton {
+    height: 56px;
+    width: 130px;
+    border-radius: 3px;
+    color: #fff;
+    margin: 20px 20px 20px 0;
+    border: 0
+}
+
+.autorizathionDiv {
+    margin: 2% 6%;
+    display: flex
+}
+
+.terms {
+    border: 0;
+    background: 0 0;
+    text-decoration: underline;
+    padding: 0 5px;
+}
+
+
+.bg-image{
+    background-image: url("https://www.isipoint.co/wp-content/uploads/2019/11/Home-isipoint-s.jpg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    z-index: 1;
+}
