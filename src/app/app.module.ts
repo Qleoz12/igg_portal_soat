@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeroIconModule, menu } from 'ng-heroicon';
 
@@ -13,6 +14,7 @@ import { CotizarInicioComponent } from './components/cotizar-inicio/cotizar-inic
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HeroIconModule.forRoot({
       menu

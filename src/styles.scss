@@ -29,33 +29,66 @@
     justify-content: space-between;
     width: calc(100% - 160px);
     margin: 20px 15px 20px 20px;
+    gap: 1rem;
+    overflow-x: clip;
 }
 
-.firstDivBorder {
-    position: relative;
-    height: 56  px;
-    background-color: #fff;
+.firstInputsDivContainer {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 0.5rem;
     border: 2px solid #e7e7e7;
-    border-radius: 3px;
-    width: 32%;
+    flex-grow: 1;
 }
 
-.firstInputNoBorder {
+.firstInputsDivContainer input{
+    margin-left: 5rem;
     border: 0;
-    background-color: #fff;
-    position: absolute;
-    top: 9px;
-    left: 47px;
     outline: 0;
-    width: calc(100% - 70px)
+    width: calc(100% - 70px);
+
 }
 
-.firstImageInput {
-    top: -2px;
-    left: 0px;
-    width: 60px;
-    position: absolute
+.firstInputsDivContainer div:nth-child(2){
+    width: 4rem;
+    position: relative;
+    top: -145%;
+    left: 0;
 }
+.firstInputsDivContainer div:nth-child(3){
+    
+    position: relative;
+    top: -4rem;
+    color: red;
+}
+
+
+// .firstDivBorder {
+//     position: relative;
+//     height: 56  px;
+//     background-color: #fff;
+//     border: 2px solid #e7e7e7;
+//     border-radius: 3px;
+//     width: 32%;
+// }
+
+// .firstInputNoBorder {
+//     border: 0;
+//     background-color: #fff;
+//     position: absolute;
+//     top: 9px;
+//     left: 47px;
+//     outline: 0;
+//     width: calc(100% - 70px)
+// }
+
+// .firstImageInput {
+//     top: -2px;
+//     left: 0px;
+//     width: 60px;
+//     position: absolute
+// }
 
 .firstBlock .autorizathionDiv {
     display: none;
@@ -67,12 +100,16 @@
     border-radius: 3px;
     color: #fff;
     margin: 20px 20px 20px 0;
-    border: 0
+    border: 0;
 }
 
 .autorizathionDiv {
     margin: 2% 6%;
     display: flex
+}
+.textAutorizathion {
+    font-size: 15px;
+    padding: 2px 0 0 6px
 }
 
 .terms {
