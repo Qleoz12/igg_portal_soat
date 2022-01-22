@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Placa } from 'src/app/models/placaRQ';
+import { ConsultarDatosClienteService } from 'src/app/services/placa.service';
 
 @Component({
   selector: 'app-cotizar-inicio',
@@ -9,7 +11,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class CotizarInicioComponent implements OnInit {
 
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private _ConsultarDatosClienteService: ConsultarDatosClienteService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -31,6 +34,19 @@ export class CotizarInicioComponent implements OnInit {
       this.validateAllFormFields(this.form)
         return;
     }
+
+    let placa =new Placa(this.form.controls.email.value,this.form.controls.phone.value,this.form.controls.plate.value)
+    this._ConsultarDatosClienteService.recuperarInformacionPlaca(placa)
+    .subscribe(
+      response => {
+
+        console.log(response)
+        
+      },
+      error => {
+        console.log(error);
+      }
+    );
     
 
     // display form values on success

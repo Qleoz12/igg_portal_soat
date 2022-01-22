@@ -4,7 +4,19 @@
 
 export const environment = {
   production: false,
-  TAILWIND_MODE: 'build'
+  TAILWIND_MODE: 'build',
+
+  resources : {
+
+    host: 'https://server.segurosmundial.com.co',
+    //host: 'http://localhost:9080',
+    /**
+     * Contexto donde se exponen los servicios
+     */
+    context: '/quotation_api',
+
+    vehicle:'/vehicle'
+  }
 };
 
 /*
