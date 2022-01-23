@@ -1,13 +1,13 @@
 module.exports = {
   prefix: '',
   mode: 'jit',
-  purge: {
-    enabled: true,
-    content: [
-      './src/**/*.{html,ts}',
-      './src/**/*.scss'
-    ]
-  },
+  content: [
+      './src/**/**/*.{html,ts,scss}',
+      './src/**/*.{html,ts,scss}',
+      './src/*.{html,ts,scss}',
+      './*.{html,ts,scss}'    
+    ],
+  
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     fontFamily: {
