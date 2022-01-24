@@ -1,10 +1,9 @@
 package co.com.igg.iggportaldemo.service;
 
-import co.com.igg.iggportaldemo.DTO.Vehicle;
-import co.com.igg.iggportaldemo.DTO.VehicleResponse;
+import co.com.igg.iggportaldemo.DTO.VehicleRq;
 import reactor.core.publisher.Mono;
 
 public interface ISoat {
 
-    public Mono<VehicleResponse> getVehicle(Vehicle rq);
+    public Mono<?> getVehicle(VehicleRq rq);
 }

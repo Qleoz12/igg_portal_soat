@@ -1,12 +1,12 @@
 package co.com.igg.iggportaldemo.DTO;
 
-public class Vehicle
+public class VehicleRq
 {
     String email;
     String phone;
     String plate;
 
-    public Vehicle(String email, String phone, String plate) {
+    public VehicleRq(String email, String phone, String plate) {
         this.email = email;
         this.phone = phone;
         this.plate = plate;
