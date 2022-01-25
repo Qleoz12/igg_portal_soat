@@ -73,19 +73,6 @@ class Vehicle {
 
 /* ObjectMapper om = new ObjectMapper();
 Root root = om.readValue(myJsonString), Root.class); */
-class Policy{
-    public int id;
-    public int soat_code;
-    public String description;
-    public int amount;
-    public int amount_discount;
-    public Date valid_from;
-    public Date valid_until;
-    public int pje_descuento_ley;
-    public int imp_descuento_ley;
-    public String cod_causal;
-    public String descripcion_causal;
-}
 
 class Person{
     public int id;
