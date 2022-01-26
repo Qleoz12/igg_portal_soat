@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { VehicleWrapper } from 'src/app/models/vehicle.model';
 
 @Component({
   selector: 'app-informacion-vehiculo',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformacionVehiculoComponent implements OnInit {
 
-  constructor() { }
+  vehicleInfo: VehicleWrapper;
 
-  ngOnInit(): void {
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    private router: Router) {
+
+      this.vehicleInfo=this.router.getCurrentNavigation()?.extras?.state?.infoplate
+     }
+
+  ngOnInit(): void 
+  {
+    
   }
 
 }

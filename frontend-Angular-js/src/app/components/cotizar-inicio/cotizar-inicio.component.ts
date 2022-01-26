@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Placa } from 'src/app/models/placaRQ';
 import { ConsultarDatosClienteService } from 'src/app/services/placa.service';
 
@@ -12,6 +13,7 @@ export class CotizarInicioComponent implements OnInit {
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
+    private router: Router,
     private _ConsultarDatosClienteService: ConsultarDatosClienteService) { }
 
   ngOnInit(): void {
@@ -39,9 +41,8 @@ export class CotizarInicioComponent implements OnInit {
     this._ConsultarDatosClienteService.recuperarInformacionPlaca(placa)
     .subscribe(
       response => {
-
-        console.log(response)
-        
+        // console.log(response)
+        this.router.navigate(['primer-paso'],{ state: { infoplate: response } });
       },
       error => {
         console.log(error);
@@ -49,8 +50,7 @@ export class CotizarInicioComponent implements OnInit {
     );
     
 
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+   
 }
 
 validateAllFormFields(formGroup: FormGroup) {         //{1}
