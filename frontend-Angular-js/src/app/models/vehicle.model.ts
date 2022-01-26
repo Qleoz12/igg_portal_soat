@@ -30,7 +30,7 @@ export interface VehicleWrapper {
     id_number: string;
   }
   
-  interface Policy {
+  export interface Policy {
     id: number;
     soat_code: number;
     description: string;

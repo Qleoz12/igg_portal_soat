@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CotizarInicioComponent } from './components/cotizar-inicio/cotizar-inicio.component';
 import { InformacionVehiculoComponent } from './components/flow/informacion-vehiculo/informacion-vehiculo.component';
+import { InformacionCompradorComponent } from './components/flow/informacion-comprador/informacion-comprador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CotizarInicioComponent,
-    InformacionVehiculoComponent
+    InformacionVehiculoComponent,
+    InformacionCompradorComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,9 @@ export const environment = {
      */
     context: '/quotation_api',
 
-    vehicle:'/vehicle'
+    vehicle:'/vehicle',
+
+    complete_quotation:'/complete_quotation'
   }
 };
 
