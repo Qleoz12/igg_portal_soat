@@ -11,8 +11,17 @@ public class VehicleRq
         this.phone = phone;
         this.plate = plate;
     }
+    
+    
 
-    public String getEmail() {
+    public VehicleRq() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public String getEmail() {
         return email;
     }
 

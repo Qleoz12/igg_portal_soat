@@ -8,7 +8,7 @@ export const environment = {
 
   resources : {
 
-    host: 'https://server.segurosmundial.com.co',
+    host: 'http://localhost:9981',
     //host: 'http://localhost:9080',
     /**
      * Contexto donde se exponen los servicios

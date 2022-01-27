@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { VehicleWrapper } from 'src/app/models/vehicle.model';
+import { Policy, VehicleWrapper } from 'src/app/models/vehicle.model';
 import { ConsultarDatosClienteService } from 'src/app/services/placa.service';
 
 @Component({
@@ -13,6 +13,7 @@ import { ConsultarDatosClienteService } from 'src/app/services/placa.service';
 export class InformacionVehiculoComponent implements OnInit {
 
   vehicleInfo : VehicleWrapper ;
+  policySelected: Policy | undefined ;
   registrationForm;
 
   constructor(
@@ -33,20 +34,22 @@ export class InformacionVehiculoComponent implements OnInit {
     
   }
 
-  get myForm() {
-    return this.registrationForm.controls.policy;
-  }
+
 
   onSubmit() {
 
     if(!this.registrationForm.valid) {
       console.log("error")
     } else {
-      this._ConsultarDatosClienteService.complete_quotation(this.registrationForm.controls.policy.value)
+
+      let policytoSend=undefined;
+      var list: Policy[] = this.vehicleInfo.vehicle.policies;
+      this.policySelected = list.filter( element => element.id === this.registrationForm.controls.policy.value)[0];
+      this._ConsultarDatosClienteService.complete_quotation(this.policySelected)
       .subscribe(
         response => {
           // console.log(response)
-          this.router.navigate(['primer-paso'],{ state: { infoplate: response } });
+          this.router.navigate(['segundo-paso'],{ state: { infoplate: this.vehicleInfo } });
         },
         error => {
           console.log(error);

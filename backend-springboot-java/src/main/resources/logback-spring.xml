@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration>
+
+	<property name="logDirectory" value="D:\\IGG\\Logs\\" />
+	<property name="logFile" value="soat.log" />
+	
+	<property name="colorLogPattern"
+		value="%black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%logger{5}:%line) - %msg%n%throwable" />
+		
+	<property name="fileLogPattern"
+		value="%d{ISO8601} %-5level [%t] %logger{5}:%line - %msg%n%throwable" />
+
+
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${colorLogPattern}</pattern>
+		</layout>
+	</appender>
+	
+	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logDirectory}/${logFile}</file>
+		<rollingPolicy 		class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${logDirectory}/${logFile}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+			<!-- keep 30 days' worth of history capped at 3GB total size -->
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>500MB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${fileLogPattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="org.springframework" level="info" />
+	<logger name="org.hibernate" level="info" />
+	
+	<logger name="co.gov.fna" level="debug"/>
+		
+	<root level="info">
+		<appender-ref ref="Console" />
+		<appender-ref ref="fileAppender" />
+	</root>
+
+</configuration>

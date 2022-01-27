@@ -22,6 +22,7 @@ export class ConsultarDatosClienteService {
 
     const headerVal = {
       'intermediary-url': ' tusoatexcelseguros.com.co',
+      'Access-Control-Allow-Origin': '*',
     };
 
     const options = {
@@ -29,7 +30,7 @@ export class ConsultarDatosClienteService {
     };
 
 
-    return this.httpClient.put(this.endpoint + environment.resources.vehicle, consulta,options)
+    return this.httpClient.post(this.endpoint + environment.resources.vehicle, consulta,options)
   }  
 
 

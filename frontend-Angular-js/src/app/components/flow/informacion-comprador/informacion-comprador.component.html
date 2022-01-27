@@ -95,47 +95,54 @@
 			<p class="mt-4 text-lg leading-relaxed text-blueGray-500">
 				Completa la información del comprador de la póliza.
 			</p>
+			<p>Recuerde: El NIT se debe especificar es sin el dígito de verificación.</p>
 		  </div>
 		</div>
-
-		<div class="container mx-auto">
-			<div class="justify-center flex flex-wrap">
-				  <div class="w-full lg:w-12/12 px-4 ">
-					<div class="flex flex-row">
-						<div class="basis-1/3 px-4">
-							<div class="w-full mb-3 mt-8">
-								<label
-								  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-								  htmlFor="marca"
-								>
-								  marca
-								</label>
-								<input
-								  type="text"
-								  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								  placeholder="marca"
-								  
-								/>
+		<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+			<div class="container mx-auto">
+				<div class="justify-center flex flex-wrap">
+					<div class="w-full lg:w-12/12 px-4 ">
+						<div class="flex flex-row">
+							<div class="basis-1/3 px-4">
+								<div class="w-full mb-3 mt-8">
+									<label
+									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+									htmlFor="marca"
+									>
+									Identificación Cédula
+									</label>
+									<select class="select-form form-control" id="tipodocumento" formControlName="ownerDocumentType" required #tipodocumento >
+										<option value="" selected>Seleccione</option>
+										<option 
+										*ngFor="let tipoDoc of tiposDocumentos | keyvalue" 
+										value="{{tipoDoc.key}}">{{tipoDoc.value}}
+										</option>
+									</select>
+								</div>
+								
 							</div>
-							<div class="w-full mb-3 mt-8">
-								<label
-								  class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-								  htmlFor="modelo"
-								>
-								modelo
-								</label>
-								<input
-								  type="text"
-								  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								  placeholder="modelo"
-								  
-								/>
+							<div class="basis-1/3 px-4">
+								<div class="w-full mb-3 mt-8">
+									<label
+									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+									htmlFor="modelo"
+									>
+									Número de identificación
+									</label>
+									<input
+									type="number"
+									class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+									placeholder=""
+									formControlName="ownerDocumentNumber"
+									/>
+								</div>
 							</div>
-						</div>
+					</div>
+				</div>
 				</div>
 			</div>
-			</div>
-		</div>
+			<button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+		</form>
 	</section>
 		</div>
 </div>

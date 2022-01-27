@@ -10,7 +10,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import co.com.igg.iggportaldemo.DTO.CitiesResponse;
 import co.com.igg.iggportaldemo.DTO.City;
 import co.com.igg.iggportaldemo.DTO.Policy;
-import co.com.igg.iggportaldemo.DTO.PolicyResponse;
 import co.com.igg.iggportaldemo.DTO.VehicleResponse;
 import co.com.igg.iggportaldemo.DTO.VehicleRq;
 import co.com.igg.iggportaldemo.service.ISoat;
