@@ -1,5 +1,6 @@
 export interface VehicleWrapper {
     vehicle: Vehicle;
+    PolicySelected: Policy;
   }
   
   interface Vehicle {

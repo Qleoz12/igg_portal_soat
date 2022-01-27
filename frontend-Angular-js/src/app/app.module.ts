@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { CotizarInicioComponent } from './components/cotizar-inicio/cotizar-inicio.component';
 import { InformacionVehiculoComponent } from './components/flow/informacion-vehiculo/informacion-vehiculo.component';
 import { InformacionCompradorComponent } from './components/flow/informacion-comprador/informacion-comprador.component';
+import { InformacionConfirmarComponent } from './components/flow/informacion-confirmar/informacion-confirmar.component';
+import { InfoStepperComponent } from './components/curtoms/info-stepper/info-stepper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CotizarInicioComponent,
     InformacionVehiculoComponent,
-    InformacionCompradorComponent
+    InformacionCompradorComponent,
+    InformacionConfirmarComponent,
+    InfoStepperComponent
   ],
   imports: [
     BrowserModule,
