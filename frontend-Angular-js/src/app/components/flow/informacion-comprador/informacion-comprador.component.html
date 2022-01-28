@@ -29,7 +29,7 @@
 									>
 									Identificación Cédula
 									</label>
-									<select class="select-form form-control" id="tipodocumento" formControlName="ownerDocumentType" required #tipodocumento >
+									<select class="select-form form-control" id="tipodocumento" formControlName="ownerDocumentType" required (change)="checkdata()">
 										<option value="" selected>Seleccione</option>
 										<option 
 										*ngFor="let tipoDoc of tiposDocumentos | keyvalue" 
@@ -52,6 +52,7 @@
 									class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
 									placeholder=""
 									formControlName="ownerDocumentNumber"
+									(change)="checkdata()"
 									/>
 								</div>
 							</div>
@@ -59,7 +60,7 @@
 				</div>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+			<button type="submit" class="firstButton">Submit</button>
 		</form>
 	</section>
 		</div>

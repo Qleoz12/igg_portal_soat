@@ -111,3 +111,85 @@
     position: absolute;
     z-index: 1;
 }
+
+
+
+
+
+@media only screen and (max-width:768px) {
+    
+    .firstTitle {
+        font-size: 5vw;
+        text-align: center;
+        margin: 30px 0
+    }
+
+    .bodyFirstForm {
+        top: unset;
+        transform: unset
+    }
+
+    .firstBodyForm {
+        height: auto;
+        min-height: 100%
+    }
+
+    .firstBlock {
+        width: 80%;
+        display: block;
+        height: initial;
+        padding: 15px 15px 30px 15px
+    }
+
+    .textAutorizathionBlock {
+        font-size: 2vw
+    }
+
+    .firstInputsDiv {
+        border: 0;
+        outline: 0;
+        width: calc(100% - 10px);
+        position: relative;
+        left: 0;
+        flex-direction: column;
+        width: auto;
+    }
+    
+    .firstInputsDivContainer {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 0.5rem;
+        border: 2px solid #e7e7e7;
+        flex-grow: 1;
+        height: 4rem;
+    }
+    .firstInputsDivContainer input{
+        width: auto;
+    }
+    
+    .firstInputsDivContainer div:nth-child(2) {
+        width: 4rem;
+        position: relative;
+        top: -52px;
+        left: 0;
+    }
+    
+
+    .firstInputsDivContainer div:nth-child(3) {
+        position: relative;
+        top: -4.5rem;
+        color: red;
+        left: 9rem;
+    }
+    .firstDivBorder {
+        width: 100%;
+        margin-top: 15px
+    }
+
+    .checkboxSize {
+        min-width: 15px;
+        height: 15px;
+        margin-right: 10px
+    }
+}

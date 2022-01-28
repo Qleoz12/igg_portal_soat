@@ -36,7 +36,8 @@
 	<logger name="org.springframework" level="info" />
 	<logger name="org.hibernate" level="info" />
 	
-	<logger name="co.gov.fna" level="debug"/>
+	<logger name="co.com.igg.iggportaldemo.config" level="debug"/>
+<!-- 	<logger name="reactor.netty.http.client" level="debug"/> -->
 		
 	<root level="info">
 		<appender-ref ref="Console" />

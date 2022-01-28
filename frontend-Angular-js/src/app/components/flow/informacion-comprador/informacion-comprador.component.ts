@@ -39,7 +39,10 @@ export class InformacionCompradorComponent implements OnInit {
       alert("cargar infor")
     }
   }
-
+  
+  checkdata(){
+    this.loaddata(this.registrationForm.controls.ownerDocumentType.value,""+this.registrationForm.controls.ownerDocumentNumber.value)
+  }
   onSubmit() {
 
     if(!this.registrationForm.valid) {

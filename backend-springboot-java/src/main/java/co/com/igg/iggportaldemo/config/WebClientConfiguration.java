@@ -2,6 +2,7 @@ package co.com.igg.iggportaldemo.config;
 
 
 import io.netty.channel.ChannelOption;
+import io.netty.handler.logging.LogLevel;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +26,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import reactor.netty.http.client.HttpClient;
 import reactor.netty.tcp.TcpClient;
+import reactor.netty.transport.logging.AdvancedByteBufFormat;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +48,7 @@ public class WebClientConfiguration {
     public WebClient webClientWithTimeout() {
         final TcpClient tcpClient = TcpClient
                 .create()
+                .wiretap(this.getClass().getCanonicalName(), LogLevel.DEBUG, AdvancedByteBufFormat.TEXTUAL)
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, TIMEOUT)
                 .doOnConnected(connection -> {
                     connection.addHandlerLast(new ReadTimeoutHandler(TIMEOUT, TimeUnit.MILLISECONDS));
@@ -55,7 +59,6 @@ public class WebClientConfiguration {
                 .baseUrl(BASE_URL)
                 .clientConnector(new ReactorClientHttpConnector(HttpClient.from(tcpClient)))
                 .exchangeStrategies(estrategies())
-                .filter(logRequest())
                 .defaultHeader("intermediary-url", "tusoatexcelseguros.com.co")
                 .build();
     }
@@ -79,6 +82,7 @@ public class WebClientConfiguration {
             logger.info("Request: {} {} {}", clientRequest.method(), clientRequest.url(),clientRequest.body().toString());
             clientRequest.headers()
                     .forEach((name, values) -> values.forEach(value -> logger.info("{}={}", name, value)));
+            logger.info("body : {} ",clientRequest.body());
             return next.exchange(clientRequest);
         };
     }

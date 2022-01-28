@@ -34,6 +34,7 @@ public class SoatController
             	res=ResponseEntity.ok().body(response.block());
             	return res;
             }
+            logger.debug("");
         }
         catch (Exception e)
         {

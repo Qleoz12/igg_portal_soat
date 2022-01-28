@@ -1,10 +1,10 @@
 package co.com.igg.iggportaldemo.DTO;
 
 import java.util.ArrayList;
-import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class VehicleResponse{
     public Vehicle vehicle;
 }
@@ -73,11 +73,13 @@ class Vehicle {
 
 /* ObjectMapper om = new ObjectMapper();
 Root root = om.readValue(myJsonString), Root.class); */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Person{
     public int id;
     public String business_name;
     public String id_number;
+    
+    
 }
 
 class Owner{
