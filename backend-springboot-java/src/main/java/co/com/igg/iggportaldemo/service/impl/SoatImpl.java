@@ -9,6 +9,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import co.com.igg.iggportaldemo.DTO.CitiesResponse;
 import co.com.igg.iggportaldemo.DTO.City;
+import co.com.igg.iggportaldemo.DTO.OwnerPersonFlat;
+import co.com.igg.iggportaldemo.DTO.OwnerResponse;
 import co.com.igg.iggportaldemo.DTO.Policy;
 import co.com.igg.iggportaldemo.DTO.VehicleResponse;
 import co.com.igg.iggportaldemo.DTO.VehicleRq;
@@ -54,5 +56,16 @@ public class SoatImpl implements ISoat {
 				.retrieve()
 	            .onStatus(httpStatus -> HttpStatus.NOT_FOUND.equals(httpStatus), clientResponse -> Mono.empty())
 	            .bodyToMono(Policy.class);
+	}
+
+	@Override
+	public Mono<?> owner(OwnerPersonFlat rq) {
+		return webClient.patch()
+				.uri("/quotation_api/owners")
+				.bodyValue(rq)
+				.header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+				.retrieve()
+	            .onStatus(httpStatus -> HttpStatus.NOT_FOUND.equals(httpStatus), clientResponse -> Mono.empty())
+	            .bodyToMono(OwnerResponse.class);
 	}
 }

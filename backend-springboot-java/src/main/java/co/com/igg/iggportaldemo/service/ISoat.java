@@ -1,5 +1,6 @@
 package co.com.igg.iggportaldemo.service;
 
+import co.com.igg.iggportaldemo.DTO.OwnerPersonFlat;
 import co.com.igg.iggportaldemo.DTO.VehicleRq;
 import reactor.core.publisher.Mono;
 
@@ -10,5 +11,7 @@ public interface ISoat {
     public Mono<?> getCities();
     
     public Mono<?> completeQuotation(String policyCode);
+    
+    public Mono<?> owner(OwnerPersonFlat rq);
     
 }

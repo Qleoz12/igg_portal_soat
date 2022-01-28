@@ -67,6 +67,7 @@ public class WebClientConfiguration {
     	
     	ObjectMapper mapper=new ObjectMapper();
     	ObjectMapper mapper2=new ObjectMapper();
+//    	mapper2.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
         ExchangeStrategies strategies = ExchangeStrategies
                 .builder()
                 .codecs(clientDefaultCodecsConfigurer -> {
@@ -93,7 +94,9 @@ public class WebClientConfiguration {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/**")
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
             }
         };
     }
